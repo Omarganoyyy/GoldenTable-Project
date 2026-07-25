@@ -1,0 +1,152 @@
+/* Import the luxury typography */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400&display=swap');
+
+/* Apply the full page seamless burgundy to black cascade */
+body {
+    margin: 0;
+    padding: 0;
+    color: #e5e5e5;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- Hero Layout Container --- */
+.hero {
+    display: grid;
+    /* Divide page layout into 3 proportional, perfectly balanced columns */
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px); /* Fills screen minus navbar height */
+    padding: 0 60px;
+    box-sizing: border-box;
+    background-color: #0b0b0b;
+
+}
+
+/* --- Side Text Typographic Styling --- */
+.hero .left-side p,
+.hero .right-side p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #e6ca97; /* Soft elegant Champagne Gold */
+    white-space: pre-line; /* Respects line breaks within the paragraph */
+}
+
+.hero .left-side {
+    text-align: left;
+    padding-right: 20px;
+}
+
+.hero .right-side {
+    text-align: right;
+    padding-left: 20px;
+}
+
+/* --- Central Showcase Content --- */
+.hero .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* --- Premium CTA Buttons --- */
+.hero .center .buttons {
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.hero .center .buttons a {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    padding: 12px 28px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Main Premium Action Button (Gold Filled) */
+.hero .center .buttons a:first-child {
+    background-color: #d4af37; /* Metallic Gold */
+    color: #120306; /* Dark background contrast match */
+    font-weight: 400;
+}
+
+.hero .center .buttons a:first-child:hover {
+    background-color: #e6ca97;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Secondary Button (Minimalist Transparent) */
+.hero .center .buttons a:last-child {
+    background: transparent;
+    color: #e5e5e5;
+    border: 1px solid rgba(229, 229, 229, 0.4);
+}
+
+.hero .center .buttons a:last-child:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* --- Center Table Presentation & Lighting Float --- */
+.hero .table {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero .table img {
+    max-width: 85%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+    animation: float 6s ease-in-out infinite; /* Gives the gold table a subtle luxurious float */
+}
+
+/* Subtle luxury backdrop spotlight glow specifically underneath the table asset */
+.hero .table::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    bottom: -10px;
+    background: radial-gradient(ellipse, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* --- Gentle Hover/Floating Animation --- */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive adjustment for clean tablet stacking */
+@media (max-width: 968px) {
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 40px;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .hero .left-side, .hero .right-side {
+        text-align: center;
+        padding: 0;
+    }
+    .hero .left-side p, .hero .right-side p {
+        font-size: 1.8rem;
+    }
+}

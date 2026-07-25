@@ -1,0 +1,118 @@
+/* Fullscreen glossy frosted-glass backdrop */
+.search-overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 11, 11, 0.65); /* Semi-transparent dark tint */
+  backdrop-filter: blur(12px) saturate(180%); /* Glossy blur effect */
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Modal Search Box */
+.search-screen-container {
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  height: 450px;
+  background: rgba(26, 26, 26, 0.85); /* Semi-translucent dark surface */
+  border: 1px solid rgba(212, 175, 55, 0.35); /* Elegant gold border */
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  animation: popUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Close Button */
+.search-screen-container .close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: #9c8f6f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.search-screen-container .close-btn:hover {
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
+/* Input Wrapper & Field */
+.search-screen-container .input-component {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #141414;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 10px 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.search-input-wrapper .search-icon {
+  color: #c9a144;
+  width: 20px;
+  height: 20px;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  height: 36px;
+  background: transparent;
+  border: none;
+  color: #f4e9cf;
+  font-size: 17px;
+  outline: none;
+  font-family: inherit;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #7a7058;
+}
+
+/* Smooth Entrance Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

@@ -1,0 +1,110 @@
+.how-it-works-section {
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  background-color: #0b0b0b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 60px ;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.how-it-works-header .subtitle {
+  color: #c9a144;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.how-it-works-header .title {
+  color: #f4e9cf;
+  font-size: 42px;
+  font-weight: 400;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+/* Grid/Flex Layout for Steps */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Circular Icon Outline */
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+  color: #c9a144;
+  stroke-width: 1.5;
+}
+
+.step-card:hover .icon-wrapper {
+  border-color: #d4af37;
+  transform: translateY(-3px);
+}
+
+/* Step Typography */
+.step-title {
+  color: #f4e9cf;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 12px;
+}
+
+.step-description {
+  color: #a0957d;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 260px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Styling for the icon link tag */
+.icon-link {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+
+/* Responsive breakpoint for mobile/tablets */
+@media (max-width: 768px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}

@@ -1,0 +1,84 @@
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    align-items: center;
+    padding: 15px 40px;
+    
+    /* Perfect solid match to your homepage gradient start */
+    background: #0B0B0B; 
+    
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15); /* Delicate gold accent border */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar .left-side {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-bar .left-side img {
+    width: 45px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.nav-bar .center {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar .center img {
+    width: 225px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+
+}
+
+.nav-bar .right-side {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-bar .right-side ul {
+    display: flex;
+    list-style: none;
+    gap: 25px; 
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+}
+
+.nav-bar .right-side ul li a {
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #c9a144;
+    background: #0B0B0B;
+}
+
+
+
+
+.nav-bar .right-side ul a:hover {
+    color: #d4af37; 
+    transform: translateY(-2px); 
+}
+
+
+.nav-bar .right-side svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 1.5;
+} 
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}

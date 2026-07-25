@@ -1,0 +1,148 @@
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #0d0d0d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #141414;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-4px);
+}
+
+.card-image {
+  width: 80%;
+  height: 160px;
+  overflow: hidden;
+  margin: 15px auto 0;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-details {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-details .name {
+  color: #f4e9cf;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.card-details .location {
+  color: #9c8f6f;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+}
+
+/* Vibe & Favorite Row Layout */
+.vibe-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.card-details .vibe {
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 10px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #c9a144;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Favorite Heart Button Styles */
+.favorite-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: #9c8f6f;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-btn .heart-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.favorite-btn:hover {
+  color: #d4af37;
+  transform: scale(1.15);
+}
+
+.favorite-btn:active {
+  transform: scale(0.95);
+}
+
+/* Bottom Button Styles */
+.view-btn {
+  display: block;
+  text-align: center;
+  margin: 0 16px 16px;
+  padding: 10px 0;
+  background-color: #c9a144;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background-color: #e0b955;
+}
+
+.view-btn:active {
+  transform: scale(0.98);
+}

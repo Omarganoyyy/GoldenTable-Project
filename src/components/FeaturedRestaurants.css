@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+/* --- FULL SCREEN SECTION FIX --- */
+.featured-restaurtants-section {
+  min-height: calc(100vh - 80px); 
+  
+  /* Creates space when scrolled into view via contactRef / smooth scroll */
+  scroll-margin-top: 80px; 
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #0d0d0d;      /* Keeps scroll-to-ref offset below navbar */
+}
+
+.featured-restaurants-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-restaurants-title p {
+  color: #d4af37;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.featured-restaurants-title h3 {
+  color: #e8dcc0;
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+/* --- GRID LAYOUT --- */
+.featured-restaurtants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;                     /* Replaced margin with grid gap for clean spacing */
+  width: 100%;
+  max-width: 1200px;             /* Prevents cards from over-stretching on wide monitors */
+  justify-items: center;
+}
+
+/* --- BUTTON STYLES --- */
+.featured-restaurtants-section .button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.featured-restaurtants-section .button a {
+  display: inline-block;          /* Ensures padding & transform work properly */
+  text-decoration: none;
+  padding: 12px 30px;
+  background: transparent;
+  color: #e5e5e5;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(229, 229, 229, 0.4);
+  letter-spacing: 1px;
+}
+
+.featured-restaurtants-section .button a:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+  transform: translateY(-2px);
+}
