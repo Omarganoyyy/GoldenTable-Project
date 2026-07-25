@@ -22,7 +22,7 @@ export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput})
   return (
     <div className="nav-bar">
       <div className="left-side">
-        <Link to={'/'}><img src="public/logo-png.png" alt="Logo" /></Link>
+        <Link to={'/'}><img src="/logo-png.png" alt="Logo" /></Link>
       </div>
 
       <div className="center">

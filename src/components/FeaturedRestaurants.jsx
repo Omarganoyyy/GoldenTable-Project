@@ -4,13 +4,9 @@ import './FeaturedRestaurants.css';
 import { featuredRestaurants } from "../../Backend/FeaturedRestaurants";
 
 
-export function FeaturedRestaurants({ FeaturedRestaurantsRef, searchInput='' }) {
+export function FeaturedRestaurants({ FeaturedRestaurantsRef}) {
 
-    const filteredRestaurants = featuredRestaurants.filter((restaurant) =>
-        restaurant.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-        restaurant.location.toLowerCase().includes(searchInput.toLowerCase())
-    );
-
+  
     return (
         <section ref={FeaturedRestaurantsRef} className="featured-restaurtants-section">
 
@@ -25,7 +21,7 @@ export function FeaturedRestaurants({ FeaturedRestaurantsRef, searchInput='' }) 
             <div className="featured-restaurtants-grid">
 
 
-                {filteredRestaurants.map((restaurant) =>
+                {featuredRestaurants.map((restaurant) =>
                 (
                     <RestaurantCard
                         key={restaurant.slug}

@@ -4,13 +4,10 @@ import "./HomePage.css";
 import { Hero } from "../components/Hero";
 import { FeaturedRestaurants } from "../components/FeaturedRestaurants";
 import { HowItWorks } from "../components/HowItWorks";
-import { useState } from "react";
 
-export function HomePage() {
+export function HomePage({searchInput,setSearchInput}) {
 
     const FeaturedRestaurantsRef = useRef(null);
-
-    const [searchInput,setSearchInput]=useState('')
 
     return (
         <>
@@ -19,7 +16,7 @@ export function HomePage() {
 
             <Hero />
 
-            <FeaturedRestaurants FeaturedRestaurantsRef={FeaturedRestaurantsRef} searchInput={searchInput}/>
+            <FeaturedRestaurants FeaturedRestaurantsRef={FeaturedRestaurantsRef}/>
 
             <HowItWorks/>
         </>
