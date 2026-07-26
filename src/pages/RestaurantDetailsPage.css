@@ -227,3 +227,28 @@
     width: 100%;
   }
 }
+
+@media (max-width: 520px) {
+  .restaurant-details-container {
+    min-height: auto;
+    padding: 24px 16px 40px;
+  }
+
+  .restaurant-details-container .restaurant-details {
+    padding: 20px 16px;
+    gap: 24px;
+  }
+
+  .restaurant-details img {
+    height: 220px;
+  }
+
+  .restaurant-details-content h1 {
+    font-size: clamp(1.8rem, 9vw, 2.25rem);
+  }
+
+  .restaurant-details-content .location {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+}

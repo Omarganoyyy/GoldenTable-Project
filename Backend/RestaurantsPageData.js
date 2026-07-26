@@ -5,7 +5,7 @@ export const RestaurantsPageData = [
         vibe: "Luxury",
         rating: 4.8,
         slug: "maison-dore",
-        image: "/restaurant-images/Maison-Dore.jpg",
+        image: `${import.meta.env.BASE_URL}restaurant-images/Maison-Dore.jpg`,
     },
     {
         name: "Nobu",
@@ -13,7 +13,7 @@ export const RestaurantsPageData = [
         vibe: "Japanese Fine Dining",
         rating: 4.9,
         slug: "nobu",
-        image: "/restaurant-images/Nobu.jpg",
+        image: `${import.meta.env.BASE_URL}restaurant-images/Nobu.jpg`,
     },
     {
         name: "Pier88",
@@ -21,7 +21,7 @@ export const RestaurantsPageData = [
         vibe: "Sea View Dining",
         rating: 4.6,
         slug: "pier88",
-        image: "/restaurant-images/Pier88.webp",
+        image: `${import.meta.env.BASE_URL}restaurant-images/Pier88.webp`,
     },
     {
         name: "Sachi",

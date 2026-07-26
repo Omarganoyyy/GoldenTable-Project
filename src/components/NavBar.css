@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     align-items: center;
-    padding: 15px 40px;
+    padding: 12px clamp(16px, 4vw, 40px);
     
     /* Perfect solid match to your homepage gradient start */
     background: #0B0B0B; 
@@ -11,6 +11,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    min-width: 0;
 }
 
 .nav-bar .left-side {
@@ -31,7 +32,7 @@
 }
 
 .nav-bar .center img {
-    width: 225px;
+    width: clamp(140px, 20vw, 225px);
     height: auto;
     object-fit: contain;
     cursor: pointer;
@@ -41,6 +42,7 @@
 .nav-bar .right-side {
     display: flex;
     justify-content: flex-end;
+    min-width: 0;
 }
 
 .nav-bar .right-side ul {
@@ -50,6 +52,7 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
+    align-items: center;
 
 }
 
@@ -81,4 +84,46 @@ button {
     border: none;
     cursor: pointer;
     color: inherit;
+}
+
+@media (max-width: 600px) {
+    .nav-bar { grid-template-columns: auto 1fr auto; padding: 10px 14px; }
+    .nav-bar .left-side img { width: 36px; }
+    .nav-bar .center img { width: min(34vw, 145px); }
+    .nav-bar .right-side ul { gap: 10px; }
+    .nav-bar .right-side svg { width: 19px; height: 19px; }
+}
+
+/* The wordmark is decorative; remove it before it crowds the navigation actions. */
+@media (max-width: 760px) {
+    .nav-bar {
+        grid-template-columns: auto 1fr;
+    }
+
+    .nav-bar .center {
+        display: none;
+    }
+
+    .nav-bar .right-side ul {
+        gap: clamp(10px, 3vw, 18px);
+    }
+}
+
+@media (max-width: 380px) {
+    .nav-bar {
+        padding-inline: 10px;
+    }
+
+    .nav-bar .left-side img {
+        width: 32px;
+    }
+
+    .nav-bar .right-side ul {
+        gap: 8px;
+    }
+
+    .nav-bar .right-side svg {
+        width: 18px;
+        height: 18px;
+    }
 }

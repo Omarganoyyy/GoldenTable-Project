@@ -8,17 +8,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 24px 16px 48px;
 }
 
 .restaurants-section .title-section{
-    font-size: 30px;
-    margin: 20px;
+    font-size: clamp(1.4rem, 5vw, 1.875rem);
+    margin: 0 0 24px;
     color: #c9a144;
+    text-align: center;
 }
 
 .restaurants-grid{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    margin: 10px;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    width: min(1200px, 100%);
+    gap: clamp(18px, 3vw, 40px);
+    justify-items: center;
+}
+
+@media (max-width: 520px) {
+    .restaurants-grid { grid-template-columns: minmax(0, 1fr); }
 }

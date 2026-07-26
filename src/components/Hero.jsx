@@ -27,7 +27,7 @@ export function Hero()
 
 
                     <div className="table">
-                        <img src="/table-png.png" alt="Table" />
+                        <img src={`${import.meta.env.BASE_URL}table-png.png`} alt="Table" />
                     </div>
 
                 </div>

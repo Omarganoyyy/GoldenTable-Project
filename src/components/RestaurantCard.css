@@ -12,8 +12,9 @@ body {
 .card {
   background-color: #141414;
   border: 1px solid rgba(212, 175, 55, 0.2);
-  width: 250px;
-  height: 350px;
+  width: 100%;
+  max-width: 280px;
+  min-height: 350px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -68,6 +69,8 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: 'Cormorant Garamond', serif;
+  max-width: calc(100% - 36px);
+  overflow-wrap: anywhere;
   font-weight: 700;
 }
 
@@ -150,4 +153,9 @@ body {
 .card-details .rating p{
   width: fit-content;
   color: #d4af37;
+}
+
+@media (max-width: 520px) {
+  .card { max-width: 340px; }
+  .card-image { height: 180px; }
 }

@@ -150,3 +150,31 @@ body {
         font-size: 1.8rem;
     }
 }
+
+@media (max-width: 520px) {
+    .hero {
+        min-height: auto;
+        gap: 28px;
+        padding: 32px 16px 44px;
+    }
+
+    .hero .left-side p, .hero .right-side p {
+        font-size: clamp(1.45rem, 7vw, 1.8rem);
+    }
+
+    .hero .center { width: 100%; gap: 28px; }
+
+    .hero .center .buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero .center .buttons a {
+        width: 100%;
+        text-align: center;
+        padding: 13px 16px;
+    }
+
+    .hero .table img { max-width: min(82vw, 330px); }
+}

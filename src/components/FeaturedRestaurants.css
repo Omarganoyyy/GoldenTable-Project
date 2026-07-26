@@ -34,14 +34,14 @@
 
 .featured-restaurants-title h3 {
   color: #e8dcc0;
-  font-size: 40px;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   margin-top: 5px;
 }
 
 /* --- GRID LAYOUT --- */
 .featured-restaurtants-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 24px;                     /* Replaced margin with grid gap for clean spacing */
   width: 100%;
   max-width: 1200px;             /* Prevents cards from over-stretching on wide monitors */
@@ -69,4 +69,11 @@
   border-color: #d4af37;
   color: #d4af37;
   transform: translateY(-2px);
+}
+
+@media (max-width: 520px) {
+  .featured-restaurtants-section { padding: 32px 16px; }
+  .featured-restaurants-title { margin-bottom: 28px; }
+  .featured-restaurtants-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .featured-restaurtants-section .button { margin-top: 28px; }
 }

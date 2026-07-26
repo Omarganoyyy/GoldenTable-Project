@@ -28,7 +28,7 @@
 
 .how-it-works-header .title {
   color: #f4e9cf;
-  font-size: 42px;
+  font-size: clamp(2rem, 5vw, 2.625rem);
   font-weight: 400;
   font-family: 'Playfair Display', serif;
   margin: 0;
@@ -103,6 +103,14 @@
 
 /* Responsive breakpoint for mobile/tablets */
 @media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 48px 20px;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 40px;
+  }
+
   .steps-container {
     grid-template-columns: 1fr;
     gap: 50px;

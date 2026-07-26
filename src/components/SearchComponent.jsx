@@ -56,9 +56,10 @@ export function SearchComponent({ onClose , setSearchInput ,searchInput}) {
           <button className="search-submit-btn" type="submit">Search</button>
         </form>
 
-        {suggestions.length > 0 && (
-          <section className="search-suggestions" aria-label="Restaurant suggestions">
-            <p className="suggestions-title">Suggestions</p>
+        <section className="search-suggestions" aria-label="Restaurant suggestions">
+          <p className="suggestions-title">Suggestions</p>
+          {suggestions.length > 0 ? (
+            <>
             {suggestions.map((restaurant) => (
               <button
                 className="suggestion-item"
@@ -70,8 +71,11 @@ export function SearchComponent({ onClose , setSearchInput ,searchInput}) {
                 <small>{restaurant.location}</small>
               </button>
             ))}
-          </section>
-        )}
+            </>
+          ) : (
+            <p className="suggestions-empty">Start typing to see matching restaurants.</p>
+          )}
+        </section>
       </div>
 
     </div>
