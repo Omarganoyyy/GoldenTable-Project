@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 import './RestaurantCard.css';
 import { useState } from "react";
 
-export function RestaurantCard({ name, location, image, vibe, slug }) {
+export function RestaurantCard({ name, location, image, vibe, slug, rating }) {
 
     const [favorite,setFavorite]=useState(false)
 
@@ -34,6 +34,11 @@ export function RestaurantCard({ name, location, image, vibe, slug }) {
               />
             </button>
           </div>
+
+          <div className="rating">
+            <p>★ {rating ?? "N/A"}</p>
+          </div>
+
         </div>
 
         <Link className="view-btn" to={`/restaurants/${slug}`}>View Tables</Link>

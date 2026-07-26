@@ -82,7 +82,7 @@ body {
 .card-details .vibe {
   display: inline-block;
   width: fit-content;
-  padding: 3px 10px;
+  padding: 3px 8px;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -145,4 +145,9 @@ body {
 
 .view-btn:active {
   transform: scale(0.98);
+}
+
+.card-details .rating p{
+  width: fit-content;
+  color: #d4af37;
 }

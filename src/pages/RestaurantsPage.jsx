@@ -37,6 +37,7 @@ export function RestaurantsPage({ searchInput = "", setSearchInput }) {
                                 image={restaurant.image}
                                 vibe={restaurant.vibe}
                                 slug={restaurant.slug}
+                                rating={restaurant.rating}
                             />
                         ))
                     ) : (

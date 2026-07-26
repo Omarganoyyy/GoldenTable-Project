@@ -30,6 +30,7 @@ export function FeaturedRestaurants({ FeaturedRestaurantsRef}) {
                         image={restaurant.image}
                         vibe={restaurant.vibe}
                         slug={restaurant.slug}
+                        rating={restaurant.rating}
                     />
                 ))}
             </div>

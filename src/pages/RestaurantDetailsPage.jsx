@@ -11,9 +11,11 @@ export function RestaurantDetailsPage({ searchInput, setSearchInput }) {
     return (
       <>
         <NavBar searchInput={searchInput} setSearchInput={setSearchInput} />
-        <main className="restaurant-details empty-restaurant">
+        <main className="empty-restaurant">
           <h1>Restaurant not found</h1>
-          <Link to="/restaurants">Browse restaurants</Link>
+          <Link to="/restaurants" className="btn-primary">
+            Browse Restaurants
+          </Link>
         </main>
       </>
     );
@@ -22,15 +24,33 @@ export function RestaurantDetailsPage({ searchInput, setSearchInput }) {
   return (
     <>
       <NavBar searchInput={searchInput} setSearchInput={setSearchInput} />
-      <main className="restaurant-details">
-        <img src={restaurant.image} alt={restaurant.name} />
-        <div className="restaurant-details-content">
-          <p>{restaurant.location}</p>
-          <h1>{restaurant.name}</h1>
-          <span>{restaurant.vibe}</span>
-          <Link to="/restaurants">Back to restaurants</Link>
-        </div>
-      </main>
+
+      <div className="restaurant-details-container">
+        <main className="restaurant-details">
+          <img src={restaurant.image} alt={restaurant.name} />
+
+          <div className="restaurant-details-content">
+            <p className="location">{restaurant.location}</p>
+
+            <h1>{restaurant.name}</h1>
+
+            <span className="vibe-tag">{restaurant.vibe}</span>
+
+            <p className="rating">
+              <span className="star">★</span> {restaurant.rating}
+            </p>
+
+            <div className="buttons">
+              <Link to="/restaurants" className="btn-secondary">
+                Back to Restaurants
+              </Link>
+              <Link to={`/restaurants/${slug}/map`} className="btn-primary">
+                View Interactive Floor Map
+              </Link>
+            </div>
+          </div>
+        </main>
+      </div>
     </>
   );
 }
