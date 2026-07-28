@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.map-page-container { min-height: calc(100vh - 70px); padding: clamp(32px, 5vw, 72px) clamp(16px, 5vw, 72px) 72px; color: #f5f5f5; background: radial-gradient(circle at 12% 8%, rgba(212, 175, 55, .11), transparent 26rem), #0b0b0b; font-family: 'Montserrat', sans-serif; }
+.map-page-heading { width: min(1180px, 100%); margin: 0 auto 32px; }
+.map-back-link { display: inline-block; margin-bottom: 26px; color: #d4af37; font-size: .75rem; font-weight: 500; letter-spacing: 1.4px; text-decoration: none; text-transform: uppercase; }
+.map-back-link:hover { color: #e6ca97; }
+.map-page-location, .map-eyebrow { color: #d4af37; font-size: .7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+.map-page-heading h1, .map-panel-heading h2, .reservation-step h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+.map-page-heading h1 { max-width: 720px; margin: 9px 0 10px; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1; }
+.map-page-heading > p:last-child { max-width: 610px; color: #b6b6b6; font-size: .9rem; line-height: 1.7; }
+.reservation-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); gap: 24px; width: min(1180px, 100%); margin: 0 auto; }
+.map-panel, .date-time-icons { border: 1px solid rgba(212, 175, 55, .22); border-radius: 16px; background: rgba(26, 26, 26, .82); box-shadow: 0 20px 45px rgba(0, 0, 0, .28); }
+.map-panel { padding: clamp(18px, 3vw, 32px); }
+.map-panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 22px; }
+.map-panel-heading h2, .reservation-step h2 { margin-top: 5px; font-size: 1.7rem; }
+.map-legend { display: flex; align-items: center; gap: 7px; padding-top: 5px; color: #a9a9a9; font-size: .7rem; white-space: nowrap; }
+.map-legend i { width: 8px; height: 8px; border-radius: 50%; background: #d4af37; box-shadow: 0 0 9px #d4af37; }
+.map-image { overflow: hidden; border: 1px solid rgba(212, 175, 55, .18); border-radius: 10px; background: #111; }
+.map-image img { display: block; width: 100%; min-height: 360px; object-fit: cover; transition: transform .4s ease; }
+.map-image:hover img { transform: scale(1.015); }
+.map-unavailable { display: grid; place-content: center; min-height: 360px; padding: 30px; text-align: center; background: linear-gradient(135deg, rgba(212, 175, 55, .06), transparent); }
+.map-unavailable span { color: #d4af37; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; }
+.map-unavailable p { max-width: 260px; margin-top: 8px; color: #9d9d9d; font-size: .8rem; line-height: 1.6; }
+.date-time-icons { display: flex; flex-direction: column; padding: 26px; }
+.reservation-step + .reservation-step { margin-top: 26px; padding-top: 26px; border-top: 1px solid rgba(212, 175, 55, .16); }
+.date-icons, .time-icons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 17px; }
+.date-btn, .time-slot-btn { border: 1px solid rgba(245, 245, 245, .16); border-radius: 7px; color: #e8e8e8; background: transparent; font-family: inherit; transition: .25s ease; }
+.date-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 11px 10px; text-align: left; }
+.date-btn span { color: #a7a7a7; font-size: .63rem; letter-spacing: .7px; text-transform: uppercase; }
+.date-btn strong { font-size: .82rem; font-weight: 500; }
+.time-slot-btn { min-height: 40px; padding: 8px 7px; font-size: .68rem; }
+.date-btn:hover, .time-slot-btn:hover { border-color: rgba(212, 175, 55, .7); color: #e6ca97; }
+.date-btn.is-selected, .time-slot-btn.is-selected { border-color: #d4af37; color: #111; background: #d4af37; box-shadow: 0 5px 15px rgba(212, 175, 55, .18); }
+.date-btn.is-selected span { color: #392e0e; }
+@media (max-width: 850px) { .reservation-layout { grid-template-columns: 1fr; } .map-image img, .map-unavailable { min-height: 260px; } }
+@media (max-width: 480px) { .map-page-container { padding-bottom: 42px; } .map-panel, .date-time-icons { padding: 18px; } .map-panel-heading { flex-direction: column; } .map-image img, .map-unavailable { min-height: 190px; } .time-icons { grid-template-columns: 1fr; } }

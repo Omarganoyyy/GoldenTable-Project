@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import { RestaurantsPage } from "./pages/RestaurantsPage";
 import { RestaurantDetailsPage } from "./pages/RestaurantDetailsPage";
 import { useState } from "react";
+import { MapPage } from "./pages/MapPage";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         path="/restaurants/:slug"
         element={<RestaurantDetailsPage searchInput={searchInput} setSearchInput={setSearchInput} />}
       />
+      <Route path="/restaurants/:slug/map" element={<MapPage searchInput={searchInput} setSearchInput={setSearchInput} />} />
     </Routes>
   );
 }
