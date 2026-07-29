@@ -21,6 +21,16 @@ export const RestaurantsPageData = [
     closingTime: "01",
   },
   {
+    name: "Auric",
+    location: "New Cairo",
+    vibe: "Modern Mediterranean",
+    rating: 4.7,
+    slug: "auric",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+    openingTime: "13",
+    closingTime: "23",
+  },
+  {
     name: "Pier88",
     location: "Alexandria",
     vibe: "Sea View Dining",

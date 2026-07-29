@@ -4,6 +4,7 @@ import { RestaurantsPage } from "./pages/RestaurantsPage";
 import { RestaurantDetailsPage } from "./pages/RestaurantDetailsPage";
 import { useState } from "react";
 import { MapPage } from "./pages/MapPage";
+import { UserProfile } from "./pages/UserProfile";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         element={<RestaurantDetailsPage searchInput={searchInput} setSearchInput={setSearchInput} />}
       />
       <Route path="/restaurants/:slug/map" element={<MapPage searchInput={searchInput} setSearchInput={setSearchInput} />} />
+      <Route path="/profile" element={<UserProfile/>}></Route>
     </Routes>
   );
 }
