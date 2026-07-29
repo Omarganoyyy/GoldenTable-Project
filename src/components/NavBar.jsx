@@ -3,7 +3,6 @@ import "./NavBar.css";
 import { useState } from "react";
 import { SearchComponent } from "./SearchComponent";
 import { Link } from "react-router-dom";
-import { UserProfile } from "../pages/UserProfile";
 
 export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput}) {
   const [search, setSearch] = useState(false);

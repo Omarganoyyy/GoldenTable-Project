@@ -3,9 +3,15 @@ import { RestaurantsPageData } from "../../Backend/RestaurantsPageData";
 import { Settings } from "lucide-react";
 import "./UserProfile.css";
 import { Link } from "react-router-dom";
+import { NavBar } from "../components/NavBar";
 
 export function UserProfile() {
     return (
+
+        <>
+
+        <NavBar/>
+
         <div className="profile-container">
             {/* Header */}
             <div className="header">
@@ -72,5 +78,6 @@ export function UserProfile() {
                 ))}
             </div>
         </div>
+        </>
     );
 }
