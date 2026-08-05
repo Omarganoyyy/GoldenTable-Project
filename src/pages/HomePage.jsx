@@ -5,20 +5,27 @@ import { Hero } from "../components/Hero";
 import { FeaturedRestaurants } from "../components/FeaturedRestaurants";
 import { HowItWorks } from "../components/HowItWorks";
 
-export function HomePage({searchInput,setSearchInput}) {
+export function HomePage({ searchInput, setSearchInput, favoriteSlugs, onToggleFavorite }) {
 
     const FeaturedRestaurantsRef = useRef(null);
+
+    const HeroRef = useRef(null)
 
     return (
         <>
 
-            <NavBar FeaturedRestaurantsRef={FeaturedRestaurantsRef} searchInput={searchInput} setSearchInput={setSearchInput}/>
+            <NavBar HeroRef={HeroRef} FeaturedRestaurantsRef={FeaturedRestaurantsRef} searchInput={searchInput} setSearchInput={setSearchInput} />
 
-            <Hero />
+            <Hero HeroRef={HeroRef} />
 
-            <FeaturedRestaurants FeaturedRestaurantsRef={FeaturedRestaurantsRef}/>
+            <FeaturedRestaurants
+                HeroRef={HeroRef}
+                FeaturedRestaurantsRef={FeaturedRestaurantsRef}
+                favoriteSlugs={favoriteSlugs}
+                onToggleFavorite={onToggleFavorite}
+            />
 
-            <HowItWorks/>
+            <HowItWorks />
         </>
     );
 }

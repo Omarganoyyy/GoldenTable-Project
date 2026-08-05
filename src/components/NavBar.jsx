@@ -1,10 +1,10 @@
-import { House, Search, User, Heart, Info } from "lucide-react";
+import { House, Search, User, Info } from "lucide-react";
 import "./NavBar.css";
 import { useState } from "react";
 import { SearchComponent } from "./SearchComponent";
 import { Link } from "react-router-dom";
 
-export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput}) {
+export function NavBar({ HeroRef, FeaturedRestaurantsRef, searchInput, setSearchInput }) {
   const [search, setSearch] = useState(false);
 
   const toggleSearch = () => {
@@ -18,6 +18,12 @@ export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput})
     });
   };
 
+  const scrollToHero = () => {
+    HeroRef?.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+  }
 
   return (
     <div className="nav-bar">
@@ -32,7 +38,7 @@ export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput})
       <div className="right-side">
         <ul>
           <li>
-            <Link to={'/'} aria-label="Home"><House /></Link>
+            <Link onClick={scrollToHero} to={'/'} aria-label="Home"><House /></Link>
           </li>
 
           <li>
@@ -46,10 +52,6 @@ export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput})
           </li>
 
           <li>
-            <Link aria-label="Favorites"><Heart /></Link>
-          </li>
-
-          <li>
             <Link onClick={scrollToContact} aria-label="Info">
               <Info />
             </Link>
@@ -57,7 +59,7 @@ export function NavBar({ FeaturedRestaurantsRef , searchInput , setSearchInput})
         </ul>
       </div>
 
-      {search && <SearchComponent onClose={() => setSearch(false)} searchInput={searchInput} setSearchInput={setSearchInput}/>}
+      {search && <SearchComponent onClose={() => setSearch(false)} searchInput={searchInput} setSearchInput={setSearchInput} />}
 
 
     </div>

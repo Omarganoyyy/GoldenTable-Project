@@ -21,10 +21,9 @@ body {
     padding: 0 60px;
     box-sizing: border-box;
     background-color: #0b0b0b;
-
+    scroll-margin-top:80px;
 }
 
-/* --- Side Text Typographic Styling --- */
 .hero .left-side p,
 .hero .right-side p {
     font-family: 'Cormorant Garamond', serif;
@@ -33,11 +32,17 @@ body {
     line-height: 1.6;
     color: #e6ca97; /* Soft elegant Champagne Gold */
     white-space: pre-line; /* Respects line breaks within the paragraph */
+    text-align: left;
 }
 
 .hero .left-side {
     text-align: left;
     padding-right: 20px;
+}
+
+.hero .right-side p{
+    display: flex;
+    justify-content: right;
 }
 
 .hero .right-side {

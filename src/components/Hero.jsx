@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom"
 
-export function Hero()
+export function Hero({HeroRef})
 {
 
     return(
     
-        <div className="hero">
+        <div ref={HeroRef} className="hero">
 
                 <div className="left-side">
                     <p>
-                        See It.
+                        Choose
                         <br />
-                        Choose It.
+                        Your
                         <br />
-                        Reserve It.
+                        Perfect Table.
                     </p>
                 </div>
 
@@ -35,9 +35,11 @@ export function Hero()
 
                 <div className="right-side">
                     <p>
-                        Your Table.
+                        Where 
                         <br />
-                        Your Experience.
+                        Every
+                        <br/>
+                        Seat Matters
                     </p>
                 </div>
 

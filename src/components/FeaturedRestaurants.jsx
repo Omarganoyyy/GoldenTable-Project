@@ -4,9 +4,9 @@ import './FeaturedRestaurants.css';
 import { featuredRestaurants } from "../../Backend/FeaturedRestaurants";
 
 
-export function FeaturedRestaurants({ FeaturedRestaurantsRef}) {
+export function FeaturedRestaurants({ FeaturedRestaurantsRef, favoriteSlugs = [], onToggleFavorite }) {
 
-  
+
     return (
         <section ref={FeaturedRestaurantsRef} className="featured-restaurtants-section">
 
@@ -21,18 +21,22 @@ export function FeaturedRestaurants({ FeaturedRestaurantsRef}) {
             <div className="featured-restaurtants-grid">
 
 
-                {featuredRestaurants.map((restaurant) =>
-                (
-                    <RestaurantCard
-                        key={restaurant.slug}
-                        name={restaurant.name}
-                        location={restaurant.location}
-                        image={restaurant.image}
-                        vibe={restaurant.vibe}
-                        slug={restaurant.slug}
-                        rating={restaurant.rating}
-                    />
-                ))}
+                {featuredRestaurants.map((restaurant) => {
+                    const isFavorite = favoriteSlugs.includes(restaurant.slug);
+                    return (
+                        <RestaurantCard
+                            key={restaurant.slug}
+                            name={restaurant.name}
+                            location={restaurant.location}
+                            image={restaurant.image}
+                            vibe={restaurant.vibe}
+                            slug={restaurant.slug}
+                            rating={restaurant.rating}
+                            favorite={isFavorite}
+                            onToggleFavorite={() => onToggleFavorite(restaurant)}
+                        />
+                    );
+                })}
             </div>
 
             <div className="button">

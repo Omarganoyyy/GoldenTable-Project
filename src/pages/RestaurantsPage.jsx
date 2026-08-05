@@ -3,7 +3,7 @@ import { NavBar } from "../components/NavBar";
 import { RestaurantCard } from "../components/RestaurantCard";
 import './RestaurantsPage.css';
 
-export function RestaurantsPage({ searchInput = "", setSearchInput }) {
+export function RestaurantsPage({ searchInput = "", setSearchInput, favoriteSlugs = [], onToggleFavorite }) {
     // 1. Convert to lowercase & trim whitespace safely
     const query = searchInput?.trim().toLowerCase() || "";
 
@@ -29,17 +29,22 @@ export function RestaurantsPage({ searchInput = "", setSearchInput }) {
                 <div className="restaurants-grid">
                     {/* 3. Render cards or empty message */}
                     {filteredRestaurants.length > 0 ? (
-                        filteredRestaurants.map((restaurant) => (
-                            <RestaurantCard 
-                                key={restaurant.slug}
-                                name={restaurant.name}
-                                location={restaurant.location}
-                                image={restaurant.image}
-                                vibe={restaurant.vibe}
-                                slug={restaurant.slug}
-                                rating={restaurant.rating}
-                            />
-                        ))
+                        filteredRestaurants.map((restaurant) => {
+                            const isFavorite = favoriteSlugs.includes(restaurant.slug);
+                            return (
+                                <RestaurantCard
+                                    key={restaurant.slug}
+                                    name={restaurant.name}
+                                    location={restaurant.location}
+                                    image={restaurant.image}
+                                    vibe={restaurant.vibe}
+                                    slug={restaurant.slug}
+                                    rating={restaurant.rating}
+                                    favorite={isFavorite}
+                                    onToggleFavorite={() => onToggleFavorite(restaurant)}
+                                />
+                            );
+                        })
                     ) : (
                         <p className="no-results">No restaurants found matching "{searchInput}"</p>
                     )}
